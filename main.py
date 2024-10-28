@@ -2,11 +2,14 @@ import discord
 from discord.ext import commands
 import yt_dlp
 import asyncio
+import os
+import webbrowser
 
 intents = discord.Intents.default()
 intents.message_content = True
 intents.voice_states = True
 
+DISCORD_TOKEN = os.environ['discordtoken']
 FFMPEG_OPTIONS = {'options': '-vn'}
 YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist': True}
 
@@ -54,6 +57,7 @@ client = commands. Bot (command_prefix="!", intents=intents)
 
 async def main():
     await client.add_cog (MusicBot(client))
-    await client.start('')
+    await client.start(DISCORD_TOKEN)
 
+webbrowser.keep_alive()
 asyncio.run(main())
