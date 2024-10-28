@@ -3,7 +3,7 @@ from discord.ext import commands
 import yt_dlp
 import asyncio
 import os
-import webbrowser
+import webserver
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -59,5 +59,5 @@ async def main():
     await client.add_cog (MusicBot(client))
     await client.start(DISCORD_TOKEN)
 
-webbrowser.keep_alive()
+webserver.keep_alive()
 asyncio.run(main())
