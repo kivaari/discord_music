@@ -1,0 +1,4 @@
+pynacl 
+discord 
+yt_dlp
+flask
